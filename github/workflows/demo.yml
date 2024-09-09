@@ -31,4 +31,6 @@ jobs:
         with:
           ssh-private-key: ${{secrets.OCI_SSH_KEY}}
       - name: Deploy to OCI_SSH_KEY
-        run
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{secrets.OCI_USER}}@${{secrets.OCI_PUBLIC_IP}} << 
+          ssh ubuntu
